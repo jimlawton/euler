@@ -8,15 +8,7 @@ from the product of two 2-digit numbers is 9009 = 91 * 99.
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
-def palindromic(n):
-    nstr = "%d" % int(n)
-    if len(nstr) % 2 != 0:
-        return False
-    nstr1 = nstr[:len(nstr)/2]
-    nstr2 = nstr[len(nstr)/2:][::-1]
-    if nstr1 == nstr2:
-        return True
-    return False
+from utils import palindromic
 
 
 maxp = 0

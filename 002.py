@@ -11,10 +11,8 @@ Find the sum of all the even-valued terms in the sequence which do not
 exceed four million.
 """
 
-def fibonacci(n):
-    if n < 2:
-         return n
-    return fibonacci(n - 2) + fibonacci(n - 1)
+from utils import fibonacci
+
 
 sum = 0
 i = 2

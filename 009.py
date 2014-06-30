@@ -13,10 +13,7 @@ Find the product abc.
 """
 
 
-def ispythagorean(a, b, c):
-    if (a ** 2 + b ** 2) == (c ** 2): 
-        return True
-    return False
+from utils import ispythagorean
 
 
 SUM = 1000

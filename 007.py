@@ -8,13 +8,7 @@ that the 6^th prime is 13.
 What is the 10001^st prime number?
 """
 
-def isprime(n):
-    if n % 2 == 0 and n > 2: 
-        return False
-    for i in range(3, n):
-        if n % i == 0:
-            return False
-    return True
+from utils import isprime
 
 
 INDEX = 10001
