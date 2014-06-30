@@ -13,3 +13,26 @@ Find the product abc.
 """
 
 
+def ispythagorean(a, b, c):
+    if (a ** 2 + b ** 2) == (c ** 2): 
+        return True
+    return False
+
+
+SUM = 1000
+
+stop = False
+for i in range(1, SUM + 1):
+    for j in range(i, SUM + 1):
+        for k in range(j, SUM + 1):
+            if i + j + k == SUM:
+                if ispythagorean(i, j, k):
+                    stop = True
+                    break
+        if stop:
+            break
+    if stop:
+        break
+
+print i * j * k
+
