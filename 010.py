@@ -9,11 +9,17 @@ Find the sum of all the primes below two million.
 
 from utils import isprime
 
-#MAX = 2000000
-MAX = 10
+MAX = 2000000
 
-sum = 0
-for i in xrange(2, MAX):
-    if isprime(i):
-        sum += i
-print sum
+def sieve(n):
+    """Return all numbers less than or equal to 'n' that are prime."""
+    allnums = range(3, n + 1, 2)
+    for mindex, number in enumerate(xrange(3, n + 1, 2)):
+        if allnums[mindex] == 0:
+            continue
+        # Set all multiples to 0.
+        for index in xrange(mindex+number, (n - 3) / 2 + 1, number):
+            allnums[index] = 0
+    return [2] + filter(lambda n: n != 0, allnums)
+
+print sum(sieve(MAX))
