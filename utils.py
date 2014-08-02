@@ -50,6 +50,18 @@ def isprime(n):
     return True
 
 
+def sieve(n):
+    """Return all numbers less than or equal to 'n' that are prime."""
+    allnums = range(3, n + 1, 2)
+    for mindex, number in enumerate(xrange(3, n + 1, 2)):
+        if allnums[mindex] == 0:
+            continue
+        # Set all multiples to 0.
+        for index in xrange(mindex+number, (n - 3) / 2 + 1, number):
+            allnums[index] = 0
+    return [2] + filter(lambda n: n != 0, allnums)
+
+
 def product(factors):
     """Return the product of the supplied list of integers."""
     return reduce(operator.mul, factors, 1)
