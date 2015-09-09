@@ -1,8 +1,8 @@
 """
-Project Euler Problem #8
-=========================
+Project Euler Problem 8
+=======================
 
-Find the greatest product of five consecutive digits in the 1000-digit
+Find the greatest product of thirteen consecutive digits in the 1000-digit
 number.
 
             73167176531330624919225119674426574742355349194934
