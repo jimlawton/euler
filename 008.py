@@ -34,7 +34,7 @@ BIGNUMSTR = "7316717653133062491922511967442657474235534919493496983520312774506
 
 prod = 0
 for i in range(0, len(BIGNUMSTR)):
-    slicestr = BIGNUMSTR[i:i+5]
+    slicestr = BIGNUMSTR[i:i+13]
     numbers = [int(slicestr[i]) for i in range(len(slicestr))]
     thisprod = product(numbers)
     if thisprod > prod:
