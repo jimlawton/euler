@@ -25,4 +25,14 @@ What is the value of the first triangle number to have over five hundred
 divisors?
 """
 
+import utils
 
+i = 1
+triangle = 0
+while 1:
+    triangle = sum(range(i+1))
+    f = utils.factors(triangle)
+    if len(f) > 500:
+        break
+    i += 1
+print triangle
