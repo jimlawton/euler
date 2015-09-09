@@ -22,3 +22,28 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 
 
+def collatz(start):
+    n = start
+    seq = [start]
+    while 1:
+        if n % 2 == 0:
+            n = n / 2
+        else:
+            n = 3 * n + 1
+        seq.append(n)
+        if n == 1:
+            break
+    return seq
+
+
+
+maxlen = 0
+longest = 0
+for i in range(1, 1000000):
+    seq = collatz(i)
+    if len(seq) > maxlen:
+        maxlen = len(seq)
+        longest = i
+
+print longest
+
