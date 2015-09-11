@@ -12,7 +12,7 @@ def simple_factors(n):
     """Return the factors of a positive integer."""
     return [x for x in range(1, n+1) if n % x == 0]
 
-def factors(n):    
+def factors(n):
     """Return the factors of a positive integer."""
     return set(reduce(list.__add__, ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0)))
 
@@ -76,10 +76,16 @@ def product(factors):
 
 
 def ispythagorean(a, b, c):
-    """Check if a triplet of integers is Pythagorean, i.e. 
+    """Check if a triplet of integers is Pythagorean, i.e.
     consists of three natural numbers, a < b < c, for
     which a^2 + b^2 = c^2."""
     if (a ** 2 + b ** 2) == (c ** 2):
         return True
     return False
+
+
+def factorial(n):
+    """Return the factorial product of the supplied integer."""
+    seq = range(1, n + 1)
+    return product(seq)
 
