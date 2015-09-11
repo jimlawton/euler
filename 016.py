@@ -7,4 +7,7 @@ Project Euler Problem 16
 What is the sum of the digits of the number 2^1000?
 """
 
-
+p = 2 ** 1000
+digitchrs = list(str(p))
+digits = [int(x) for x in digitchrs]
+print sum(digits)
