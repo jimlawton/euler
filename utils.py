@@ -98,3 +98,26 @@ def pairwise(iterable):
             break
     return pairs
 
+
+def max_digits(iterable):
+    """Return the maximum number of digits in any element of a list."""
+    digits = 0
+    for elem in iterable:
+        if len("%d" % elem) > digits:
+            digits = len("%d" % elem)
+    return digits
+
+
+def print_triangle(triangle):
+    """Pretty-prints a triangle of integers."""
+    maxrowlen = 0
+    for row in triangle:
+        if len(row) > maxrowlen:
+            maxrowlen = len(row)
+    maxdigits = max([max_digits(row) for row in triangle])
+    maxlen = maxdigits * maxrowlen
+    for row in triangle:
+        rowstrlist = ["{num:0{width}}".format(num=x, width=maxdigits) for x in row]
+        pad = maxlen - len(row) * maxdigits
+        print (' ') * pad, '  '.join(rowstrlist)
+
