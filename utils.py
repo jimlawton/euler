@@ -117,7 +117,9 @@ def print_triangle(triangle):
     maxdigits = max([max_digits(row) for row in triangle])
     maxlen = maxdigits * maxrowlen
     for row in triangle:
-        rowstrlist = ["{num:0{width}}".format(num=x, width=maxdigits) for x in row]
+        rowstrlist = ["{num:0{width}}".format(num=x, width=maxdigits)
+                      for x in row]
         pad = maxlen - len(row) * maxdigits
-        print (' ') * pad, '  '.join(rowstrlist)
+        print (' ') * pad, \
+            "{pad:{width}}".format(pad=' ', width=maxdigits).join(rowstrlist)
 
