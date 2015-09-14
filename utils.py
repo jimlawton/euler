@@ -89,3 +89,12 @@ def factorial(n):
     seq = range(1, n + 1)
     return product(seq)
 
+
+def pairwise(iterable):
+    pairs = []
+    for index, item in enumerate(iterable):
+        pairs.append(iterable[index:index+2])
+        if index == len(iterable) - 2:
+            break
+    return pairs
+
